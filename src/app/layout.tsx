@@ -1,13 +1,13 @@
-'use client';
+import type { Metadata } from "next";
+import { Montserrat } from "next/font/google";
 
-import Lenis from 'lenis';
-import { Montserrat } from 'next/font/google';
-import { useEffect, useState } from 'react';
+import "@/shared/styles/globals.scss";
 
-import '@/shared/styles/globals.scss';
+const montserrat = Montserrat({ subsets: ["latin"] });
 
-// ✅ SEO metadata
-export const metadata = {
+// ✅ SEO metadata (server-side)
+export const metadata: Metadata = {
+  metadataBase: new URL("https://mediabyvm.com"),
   title: "Media By VM | Digitalni marketing i brendiranje",
   description:
     "Agencija za digitalni marketing iz Mladenovca. Pomažemo biznisima da izgledaju profesionalno, povećaju vidljivost i prodaju više kroz društvene mreže, video sadržaj i web dizajn.",
@@ -22,7 +22,7 @@ export const metadata = {
     siteName: "Media By VM",
     images: [
       {
-        url: "/images/og-image.jpg", // postavi u public/images
+        url: "/images/og-image.jpg", // stavi ovu sliku u public/images
         width: 1200,
         height: 630,
         alt: "Media By VM logo",
@@ -43,42 +43,17 @@ export const metadata = {
   },
 };
 
-const montserrat = Montserrat({ subsets: ['latin'] });
-
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
-  const [dimension, setDimension] = useState<any>(null);
-
-  useEffect(() => {
-    const lenis = new Lenis();
-
-    const raf = (time: number) => {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    };
-
-    const resize = () => {
-      setDimension({ width: window.innerWidth, height: window.innerHeight });
-    };
-
-    window.addEventListener('resize', resize);
-    requestAnimationFrame(raf);
-    resize();
-
-    return () => window.removeEventListener('resize', resize);
-  }, []);
-
+}) {
   return (
     <html lang="sr">
       <head>
-        {/* Favicons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <meta name="theme-color" content="#ff6600" />
       </head>
-
       <body className={montserrat.className} suppressHydrationWarning>
         <main id="top">{children}</main>
       </body>

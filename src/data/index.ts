@@ -29,8 +29,8 @@ export const CARDS = [
     description:
       'Digitalni marketing koji prodaje. Pomažemo brendovima da povećaju vidljivost, izgrade poverenje i pretvore pratioce u kupce.',
     services: [
-      ['Instagram', 'TikTok'],
-      ['Facebook', 'YouTube'],
+      ['Društvene mreže','META ADS'],
+      [],
     ],
     number: '01.',
     classes: '',

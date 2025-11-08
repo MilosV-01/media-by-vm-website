@@ -48,7 +48,6 @@ const Index: FC<Props> = ({ close }) => {
           </div>
         </div>
 
-
       </motion.div>
       <div
         aria-label="button"

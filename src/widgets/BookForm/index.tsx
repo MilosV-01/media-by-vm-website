@@ -49,112 +49,123 @@ const Index: FC<Props> = () => {
   };
 
   return (
-    <div className="mx-auto max-w-[70vw] md:max-w-[85vw] px-[4vw] ">
-      <div className="relative">
+    <div className="mx-auto w-full max-w-xl px-4 py-8 md:py-12">
+      {/* Back + naslov */}
+      <div className="mb-6 flex items-center gap-3">
         <button
-          className=" group absolute left-0 top-[25%] z-10 box-content rounded-full bg-stone-800 p-[0.5vw] hover:bg-stone-800"
+          className="flex h-9 w-9 items-center justify-center rounded-full bg-white/5 hover:bg-white/10 transition"
           onClick={() => push('/')}
           type="button"
         >
           <svg
             focusable="false"
-            className="h-[1.5vw] w-[1.5vw] md:h-[2.25vw] md:w-[2.25vw] fill-stone-400 transition group-hover:fill-stone-300"
+            className="h-4 w-4 fill-stone-300"
             viewBox="0 0 24 24"
           >
             <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20z"></path>
           </svg>
         </button>
-        <h1 className="mb-[1.75vw] md:text-[4.6vw] md:mb-[2.25vw] text-center text-[3.5vw] font-bold leading-[100%]">
+
+        <h1 className="text-lg md:text-2xl font-semibold">
           Forma za upit
         </h1>
       </div>
 
-      <form className="flex h-full flex-col items-center" onSubmit={handleSubmit}>
-        <div className="flex flex-wrap">
-          {RADIO_FIELDS.map((item) => (
+      <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+        {/* RADIO POLJA – JEDNO ISPOD DRUGOG */}
+        {RADIO_FIELDS.map((item) => (
+          <div key={item.title} className="flex flex-col gap-2">
+            <h4 className="text-sm md:text-base font-medium text-white">
+              {item.title}
+            </h4>
+
             <RadioGroup
-              key={item.title}
-              onValueChange={(value) => setForm((prev) => ({ ...prev, [item.formKey]: value }))}
-              className={`mb-[1.75vw] inline-block w-[calc(50%-1.75vw)] ${item.classes}`}
+              onValueChange={(value) =>
+                setForm((prev) => ({ ...prev, [item.formKey]: value }))
+              }
+              className="flex flex-col gap-1.5"
             >
-              <h4 className="mb-[0.2vw] md:mb-[0.5vw] text-[1.3vw] md:text-[1.6vw] font-medium">
-                {item.title}
-              </h4>
               {item.radioArray.map((radio) => (
-                <div
+                <label
                   key={radio.value}
-                  className="flex items-center space-x-[0.65vw] md:space-x-[1vw] md:space-y-[0.3vw] font-[400]"
+                  htmlFor={radio.name}
+                  className="flex items-center gap-2 text-xs md:text-sm text-white/80"
                 >
-                  <RadioGroupItem value={radio.value} id={radio.name} required />
-                  <label
-                    htmlFor={radio.name}
-                    className="text-[1vw] md:text-[1.25vw] leading-[1.75vw]"
-                  >
-                    {radio.name}
-                  </label>
-                </div>
+                  <RadioGroupItem
+                    value={radio.value}
+                    id={radio.name}
+                    required
+                    className="h-4 w-4 border-white/60 data-[state=checked]:bg-orange-500 data-[state=checked]:border-orange-500"
+                  />
+                  <span>{radio.name}</span>
+                </label>
               ))}
             </RadioGroup>
-          ))}
-
-          <div className="w-full space-y-[2vw] text-[1.1vw]">
-            {INPUT_FIELDS.map((item) => (
-              <div key={item.label} className={`w-full ${item.classes}`}>
-                <label
-                  htmlFor={item.label}
-                  className="leading-[1.5] mb-[0.4vw] text-[1.2vw] md:text-[1.5vw] inline-block"
-                >
-                  {item.label}
-                </label>
-                <input
-                  onChange={({ target: { name, value } }) =>
-                    setForm((prev) => ({ ...prev, [name]: value }))
-                  }
-                  type={item.type || 'text'}
-                  name={item.name}
-                  id={item.label}
-                  className="h-[3vw] md:h-[4vw] w-full appearance-none rounded-[0.25vw] border-[0.125vw] border-primary/80 bg-transparent px-[1vw] py-[0.8vw]"
-                  required={item.required}
-                />
-              </div>
-            ))}
-            <div className="w-full">
-              <label
-                className="leading-[1.5] mb-[0.4vw] text-[1.2vw] md:text-[1.5vw] inline-block"
-                htmlFor="message"
-              >
-                Recite nam više
-              </label>
-              <textarea
-                minLength={20}
-                maxLength={500}
-                onChange={({ target: { name, value } }) =>
-                  setForm((prev) => ({ ...prev, [name]: value }))
-                }
-                id="message"
-                name="message"
-                className="min-h-[10vw] w-full resize-none border-[0.125vw] rounded-[0.125vw] text-[1.2vw] md:text-[1.5vw] border-primary/80 bg-transparent px-[0.8vw] py-[0.6vw]"
-              />
-            </div>
-
-            {/* poruke o uspehu / grešci */}
-            {success && (
-              <p className="text-[1vw] md:text-[1.2vw] text-green-400 mt-[0.5vw]">
-                {success}
-              </p>
-            )}
-            {error && (
-              <p className="text-[1vw] md:text-[1.2vw] text-red-400 mt-[0.5vw]">
-                {error}
-              </p>
-            )}
           </div>
+        ))}
 
+        {/* INPUT POLJA – JEDNO ISPOD DRUGOG */}
+        {INPUT_FIELDS.map((item) => (
+          <div key={item.label} className="flex flex-col gap-1">
+            <label
+              htmlFor={item.label}
+              className="text-xs md:text-sm text-white/70"
+            >
+              {item.label}
+              {item.required && <span className="text-orange-400"> *</span>}
+            </label>
+            <input
+              onChange={({ target: { name, value } }) =>
+                setForm((prev) => ({ ...prev, [name]: value }))
+              }
+              type={item.type || 'text'}
+              name={item.name}
+              id={item.label}
+              className="h-11 w-full rounded-md border border-white/20 bg-black/40 px-3 text-sm text-white outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500/70 transition placeholder:text-white/30"
+              required={item.required}
+            />
+          </div>
+        ))}
+
+        {/* TEXTAREA */}
+        <div className="flex flex-col gap-1">
+          <label
+            htmlFor="message"
+            className="text-xs md:text-sm text-white/70"
+          >
+            Recite nam više
+          </label>
+          <textarea
+            minLength={20}
+            maxLength={500}
+            onChange={({ target: { name, value } }) =>
+              setForm((prev) => ({ ...prev, [name]: value }))
+            }
+            id="message"
+            name="message"
+            className="min-h-[120px] w-full rounded-md border border-white/20 bg-black/40 px-3 py-2 text-sm text-white outline-none resize-none focus:border-orange-700 focus:ring-1 focus:ring-orange-500/70 transition placeholder:text-white/30"
+            placeholder="Kratko opišite čime se bavite i šta želite da postignete..."
+          />
+        </div>
+
+        {/* STATUS PORUKE */}
+        {success && (
+          <p className="text-xs md:text-sm text-emerald-400">{success}</p>
+        )}
+        {error && <p className="text-xs md:text-sm text-orange-700">{error}</p>}
+
+        {/* DUGME */}
+        <div className="pt-2">
           <Button
-            title={loading ? 'Slanje...' : 'Pošalji'}
+            title={loading ? 'Slanje...' : 'Pošalji upit'}
             type="submit"
-            classes="py-[1.2vw] px-[5vw] md:py-[1.6vw] md:px-[8vw] text-[1.1vw] md:text-[1.5vw] bg-bg-1/90 hover:bg-bg-1/80 disabled:opacity-60"
-            btnClasses="p-[0.2vw] md:p-[0.25vw] capitalize self-start mt-[2.5vw]"
+            classes="
+              rounded-full
+              px-6 py-2.5 text-sm md:text-base
+              bg-orange-500 hover:bg-orange-400 text-black font-medium
+              disabled:opacity-60 disabled:cursor-not-allowed
+            "
+            btnClasses=""
             disabled={loading}
           />
         </div>

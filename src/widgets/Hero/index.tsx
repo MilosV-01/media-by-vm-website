@@ -33,7 +33,7 @@ const Hero = () => {
       >
         <motion.h1
           ref={heading1}
-          className="relative z-20 mt-[-5vw] w-full text-center text-[4.5vw] md:text-[6vw] md:leading-[1.2] font-extrabold text-orange-700 max-w-[95%]"
+          className="relative z-20 mt-[-5vw] w-full text-center text-[4.5vw] md:text-[6vw] md:leading-[1.2] font-extrabold text-bold-1 max-w-[95%]"
           style={{ opacity }}
         >
           Media By VM
@@ -41,9 +41,21 @@ const Hero = () => {
         <motion.h2 ref={heading2} className="z-20 text-[1.7vw] md:text-[3vw] font-medium text-text-1/7 5" style={{ opacity }} >
           Tvoj biznis je sjajan, tvoj marketing treba da bude isto.
         </motion.h2>
-        <div ref={ref1} className={`absolute left-0 top-0 z-10 h-full w-full`}>
-          <Image src={main_1} fill={true} alt="" className='' objectFit="cover" />
-        </div>
+        <div
+  ref={ref1}
+  className="absolute inset-0 z-10 flex items-center justify-center"
+>
+  {/* Krug (Frame_1.svg) */}
+  <div className="relative w-[70vw] h-[70vw] md:w-[80vw] md:h-[80vw]">
+    <Image
+      src={main_1}
+      alt="Media By VM logo"
+      fill
+      className="object-contain opacity-90"
+      priority
+    />
+  </div>
+</div>
 
         <div ref={ref2} className={`absolute left-0 top-0 h-full w-full `}>
           <Image src={main_2} fill={true} alt="" objectFit="cover" />
