@@ -6,51 +6,51 @@ export const NAV_ITEMS = [
     href: 'main',
   },
   {
-    title: 'About',
+    title: 'O Nama',
     href: 'about',
   },
   {
-    title: 'Services',
+    title: 'Usluge',
     href: 'services',
   },
   {
-    title: 'Approach',
+    title: 'Pristup',
     href: 'approach',
   },
   {
-    title: 'Contact',
+    title: 'Kontakt',
     href: 'contact',
   },
 ];
 
 export const CARDS = [
   {
-    title: 'Design',
+    title: 'Digitalni Marketing',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam alias placeat temporibus mollitia doloribus. Consequatur aperiam facilis culpa fuga quia! Labore, sequi! Optio officiis obcaecati tempora voluptates consequuntur, placeat ad.',
+      'Digitalni marketing koji prodaje. Pomažemo brendovima da povećaju vidljivost, izgrade poverenje i pretvore pratioce u kupce.',
     services: [
-      ['Web app', 'Branding'],
-      ['Mobile app', 'Logo'],
+      ['Instagram', 'TikTok'],
+      ['Facebook', 'YouTube'],
     ],
     number: '01.',
     classes: '',
   },
   {
-    title: 'Fullstack development',
+    title: 'Brending i kreativni sadržaj',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam alias placeat temporibus mollitia doloribus. Consequatur aperiam facilis culpa fuga quia! Labore, sequi! Optio officiis obcaecati tempora voluptates consequuntur, placeat ad.',
+      'Pomažemo vam da se izdvojite kroz moderan dizajn, dosledan vizuelni stil i sadržaj koji privlači pažnju. Spoj estetike i strategije koji gradi poverenje.',
     services: [
-      ['Online shop', 'Web application'],
-      ['CMS', 'API Development'],
+      ['Foto i video', 'Dizajn i estetika '],
+      ['Objave i Reels', 'Snimanje dronom'],
     ],
     number: '02.',
     classes: 'border-t border-gray-1/50',
   },
   {
-    title: 'Mobile development',
+    title: 'Web razvoj',
     description:
-      'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam alias placeat temporibus mollitia doloribus. Consequatur aperiam facilis culpa fuga quia! Labore, sequi! Optio officiis obcaecati tempora voluptates consequuntur, placeat ad.',
-    services: [['Android', 'IOS']],
+      'Kreiramo moderne, brze i SEO optimizovane sajtove koji rade za vas, pretvaraju posetioce u klijente i predstavljaju vaš brend u najboljem svetlu.',
+    services: [['Izrada web sajtova', 'SEO optimizacija']],
     number: '03.',
     classes: 'border-t border-gray-1/50',
   },
@@ -59,89 +59,90 @@ export const CARDS = [
 export const APPROACH_CARDS = [
   {
     icon: First,
-    title: 'Consultation',
+    title: 'Konsultacija',
     description:
-      "We listen carefully to the customer's wishes and ideas about the project. Then we share our vision and, based on this exchange, come to a common agreement.",
+      "Pažljivo slušamo vaše ideje, ciljeve i potrebe. Zajedno definišemo strategiju i pravac koji vodi do stvarnih rezultata.",
   },
   {
     icon: Second,
-    title: 'Joint review',
+    title: 'Strategija i dizajn',
     description:
-      'Then we start creating the design. After completion, we conduct a joint review, where the customer, if desired, can make changes.',
+      'Kreiramo vizuelni identitet i plan komunikacije koji oslikava vaš brend. Od boja do tona poruke, sve je usklađeno s vašim ciljem.',
   },
   {
     icon: Third,
-    title: 'Development',
-    description: 'After the design is approved, we proceed to the actual development of the product.',
+    title: 'Realizacija kampanje',
+    description: 'Pokrećemo sadržaj na društvenim mrežama, optimizujemo objave i oglase, dok pratimo rezultate i prilagođavamo pristup u realnom vremenu.',
   },
   {
     icon: Fourth,
-    title: 'Testing',
+    title: 'Rezultati i analiza',
     description:
-      'Once the development is complete, we thoroughly test each component of the product. Then we invite the customer for user testing.',
+      'Na kraju analiziramo performanse, predstavljamo izveštaj i predlažemo nove korake za još veći rast i prodaju.',
   },
   {
     icon: Fifth,
-    title: 'Final result',
+    title: 'Održavanje i rast',
     description:
-      'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates laboriosam ad eius, culpa soluta ab. Beatae optio quas adipisci aliquam quia velit soluta iste dicta, modi tenetur magnam, aut laborum placeat est. Unde minima amet illo eveniet qui sunt omnis laudantium laboriosam, officia dignissimos molestias tempore velit. Provident, explicabo. Dolor.',
+      'Nastavljamo da pratimo rezultate i razvijamo vaš brend. Optimizujemo kampanje, predlažemo nove ideje i brinemo da vaš digitalni rast nikad ne stane.',
   },
 ];
 
 export const RADIO_FIELDS = [
   {
-    title: 'What type of services you want?',
+    title: 'Koja vrsta usluge vam je potrebna?',
     classes: 'mr-[2.25vw]',
     radioArray: [
-      { name: 'Design/Branding', value: 'design/branding' },
-      { name: 'Web Development', value: 'web-dev' },
-      { name: 'Mobile Development', value: 'mobile-dev' },
-      { name: 'All of the above', value: 'all-types' },
-      { name: 'Other', value: 'other-service' },
+      { name: 'Društvene mreže (Instagram / TikTok / Facebook)', value: 'design/branding' },
+      { name: 'Foto & video produkcija', value: 'web-dev' },
+      { name: 'Brendiranje i dizajn', value: 'mobile-dev' },
+      { name: 'Izrada web sajta', value: 'all-types' },
+      { name: 'Drugo', value: 'other-service' },
     ],
     formKey: '_service',
   },
   {
-    title: 'What is your budget category?',
+    title: 'Koji je vaš okvirni mesečni budžet?',
     classes: '',
     radioArray: [
-      { name: '$2000 - $4000', value: '2-4' },
-      { name: '$4000 - $8000', value: '4-8' },
-      { name: '$8000 - $10000', value: '8-10' },
-      { name: '$10000', value: '10+' },
+      { name: 'do 200 €', value: '2-4' },
+      { name: '200 € - 400 €', value: '4-8' },
+      { name: '400 € - 700 €', value: '8-10' },
+      { name: 'preko 700 €', value: '10+' },
     ],
     formKey: '_budget',
   },
   {
-    title: 'Approximately how many pages will your project have?',
+    title: 'Koji je cilj vaše saradnje sa nama?',
     classes: 'mr-[2.25vw]',
     radioArray: [
-      { name: 'Less than 5', value: '<5' },
-      { name: '6-10', value: '6-10' },
-      { name: '11-20', value: '11-20' },
-      { name: '20+', value: '20+' },
+      { name: 'Povećanje prodaje', value: '<5' },
+      { name: 'Rast na društvenim mrežama', value: '6-10' },
+      { name: 'Izgradnja brenda', value: '11-20' },
+      { name: 'Novi sajt / redizajn postojećeg', value: '20+' },
+      { name: 'Drugo', value: '20+' },
+
     ],
     formKey: '_pages',
   },
   {
-    title: 'How quickly do you need the project?',
+    title: 'Koliko brzo želite da pokrenemo projekat?',
     classes: '',
     radioArray: [
-      { name: 'As fast as possible', value: 'max-fast' },
-      { name: 'High priority ', value: 'high-prio ' },
-      { name: 'Regular time', value: 'regular' },
-      { name: 'Take your time ', value: 'take-your-time' },
+      { name: 'Što pre', value: 'max-fast' },
+      { name: 'U narednih 7 dana', value: 'high-prio ' },
+      { name: 'Tokom sledećeg meseca', value: 'regular' },
+      { name: 'Samo prikupljam informacije', value: 'take-your-time' },
     ],
     formKey: '_quickness',
   },
 ];
 
 export const INPUT_FIELDS = [
-  { label: 'Your name', name: 'first', classes: 'inline-block !w-[calc(50%-2vw)] mr-[4vw]', required: true },
-  { label: 'Phone', name: 'phone', classes: 'inline-block !w-[calc(50%-2vw)]', type: 'number', required: true },
+  { label: 'Ime i prezime', name: 'first', classes: 'inline-block !w-[calc(50%-2vw)] mr-[4vw]', required: true },
+  { label: 'Telefon', name: 'phone', classes: 'inline-block !w-[calc(50%-2vw)]', type: 'number', required: true },
   { label: 'Email', name: 'email', classes: '', type: 'email' },
-  { label: 'Company name', name: 'company', classes: '', required: true },
-  { label: 'Company website', name: 'websiteUrl', classes: '' },
+  { label: 'Ime kompanije', name: 'company', classes: '', required: true },
 ];
 
 export const BOOK_FORM_DEFAULT_STATE = {
@@ -149,7 +150,6 @@ export const BOOK_FORM_DEFAULT_STATE = {
   _budget: null,
   _pages: null,
   _quickness: null,
-
   first: '',
   phone: '',
   email: '',

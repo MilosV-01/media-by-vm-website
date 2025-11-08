@@ -1,6 +1,7 @@
 'use client';
 import { FC, useEffect, useState } from 'react';
-
+import Image from "next/image";
+import Link from "next/link";
 import SidebarMenu from '@/components/SidebarMenu';
 import { AnimatePresence } from 'framer-motion';
 import { LogoIcon } from '@/icons/ApproachIcons/LogoIcon';
@@ -31,9 +32,18 @@ const Index: FC<Props> = () => {
           <div className={`burger ${isActive && 'burgerActive'}`}></div>
         </button>
       </div>
-      <button title="your_agency_name" className="p-[2vw] fixed z-[100] top-0 left-0 group">
-        <LogoIcon className="w-[5vw] h-[5vw] group-hover:text-white/80 transition duration-300" />
-      </button>
+      
+
+<Link href="/" title="Početna" className="p-[1vw] fixed z-[100] top-0 left-0 group">
+  <Image
+    src="/images/logo.png"
+    alt="Media By VM logo"
+    width={80}
+    height={80}
+    className="w-[5vw] h-[5vw] rounded-full object-cover border-2 border-orange-500 group-hover:opacity-80 transition duration-300"
+  />
+</Link>
+
       <AnimatePresence mode="wait">{isActive && (
         <SidebarMenu close={closeSidebar} />
       )}
