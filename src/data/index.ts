@@ -29,7 +29,7 @@ export const CARDS = [
     description:
       'Digitalni marketing koji prodaje. Pomažemo brendovima da povećaju vidljivost, izgrade poverenje i pretvore pratioce u kupce.',
     services: [
-      ['Društvene mreže','META ADS'],
+      ['Društvene mreže','META ADS', 'Google My Business'],
       [],
     ],
     number: '01.',
@@ -40,7 +40,7 @@ export const CARDS = [
     description:
       'Pomažemo vam da se izdvojite kroz moderan dizajn, dosledan vizuelni stil i sadržaj koji privlači pažnju. Spoj estetike i strategije koji gradi poverenje.',
     services: [
-      ['Foto i video', 'Dizajn i estetika '],
+      ['Foto i video', 'Dizajn i estetika'],
       ['Objave i Reels', 'Snimanje dronom'],
     ],
     number: '02.',
@@ -50,7 +50,7 @@ export const CARDS = [
     title: 'Web razvoj',
     description:
       'Kreiramo moderne, brze i SEO optimizovane sajtove koji rade za vas, pretvaraju posetioce u klijente i predstavljaju vaš brend u najboljem svetlu.',
-    services: [['Izrada web sajtova', 'SEO optimizacija']],
+    services: [['Izrada web sajtova', 'SEO optimizacija','AEO optimizacija']],
     number: '03.',
     classes: 'border-t border-gray-1/50',
   },

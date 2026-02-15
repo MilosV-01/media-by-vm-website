@@ -46,7 +46,7 @@ const Hero = () => {
   className="absolute inset-0 z-10 flex items-center justify-center"
 >
   {/* Krug (Frame_1.svg) */}
-  <div className="relative w-[70vw] h-[70vw] md:w-[80vw] md:h-[80vw]">
+  <div className="relative w-[45vw] h-[45vw] md:w-[80vw] md:h-[80vw]">
     <Image
       src={main_1}
       alt="Media By VM logo"

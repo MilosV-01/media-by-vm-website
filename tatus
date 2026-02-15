@@ -1,0 +1,13 @@
+[1mdiff --git a/src/widgets/Hero/index.tsx b/src/widgets/Hero/index.tsx[m
+[1mindex d805b75..33ca47f 100644[m
+[1m--- a/src/widgets/Hero/index.tsx[m
+[1m+++ b/src/widgets/Hero/index.tsx[m
+[36m@@ -46,7 +46,7 @@[m [mconst Hero = () => {[m
+   className="absolute inset-0 z-10 flex items-center justify-center"[m
+ >[m
+   {/* Krug (Frame_1.svg) */}[m
+[31m-  <div className="relative w-[70vw] h-[70vw] md:w-[80vw] md:h-[80vw]">[m
+[32m+[m[32m  <div className="relative w-[45vw] h-[45vw] md:w-[80vw] md:h-[80vw]">[m
+     <Image[m
+       src={main_1}[m
+       alt="Media By VM logo"[m
