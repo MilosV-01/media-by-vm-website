@@ -1,5 +1,7 @@
 import { FC } from 'react';
 import { useRouter } from 'next/navigation';
+import { FaInstagram, FaTiktok, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+
 
 import Button from '@/components/ui/Button';
 import SectionOpacity from '@/components/ui/SectionOpacity';
@@ -29,37 +31,59 @@ const Index: FC<Props> = () => {
         />
       </div>
 
-      <footer className="flex justify-between border-t border-t-gray-800 px-[5vw] py-[1.8vw] text-[1.6vw] md:text-[2vw] md:py-[2.4vw] md:px-[2vw] ">
-        <div>©Media By VM 2025. <a href="https://github.com/Shatlyk1011/agency-website" target='_blank' rel="norelopener"></a></div>
-        <ul className="flex space-x-[2vw] text-lg md:text-2xl font-semibold">
-  <li>Mladenovac, Srbija</li>
+     <footer id="kontakt" className="border-t border-gray-800 px-5 py-8 md:px-12 md:py-10">
+  <div className="mx-auto max-w-6xl flex flex-col gap-6">
 
-  <li>
-    <a href="https://www.instagram.com/mediabyvm/" target="_blank" rel="noopener noreferrer" className="hover:underline">
-      Instagram
-    </a>
-  </li>
-
-  <li>
-    <a href="https://www.tiktok.com/@mediabyvm" target="_blank" rel="noopener noreferrer" className="hover:underline">
-      TikTok
-    </a>
-  </li>
-
-  <li>
-    <a href="https://www.facebook.com/mediabyvm" target="_blank" rel="noopener noreferrer" className="hover:underline">
-      Facebook
-    </a>
-  </li>
-
-  <li>
-    <a href="linkedin.com/in/miloš-vukmirović-213142251" target="_blank" rel="noopener noreferrer" className="hover:underline">
-      LinkedIn
-    </a>
-  </li>
+    {/* 1️⃣ Socials */}
+    <ul className="flex justify-center gap-5">
+  {[
+    { icon: <FaInstagram />, href: "https://www.instagram.com/mediabyvm/" },
+    { icon: <FaTiktok />, href: "https://www.tiktok.com/@mediabyvm" },
+    { icon: <FaFacebookF />, href: "https://www.facebook.com/mediabyvm" },
+    { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/milo%C5%A1-vukmirovi%C4%87-213142251" },
+  ].map((item, index) => (
+    <li key={index}>
+      <a
+        href={item.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="flex items-center justify-center w-10 h-10 md:w-12 md:h-12 rounded-full border border-gray-700 text-gray-300 hover:text-white hover:border-gray-500 hover:bg-white/10 transition"
+      >
+        <span className="text-lg md:text-xl">
+          {item.icon}
+        </span>
+      </a>
+    </li>
+  ))}
 </ul>
 
-      </footer>
+
+    {/* 2️⃣ Location + Phone */}
+   <div className="flex flex-col items-center gap-1 text-sm md:text-base text-gray-300">
+  <a
+    href="tel:+381611415035"
+    className="text-white hover:underline font-medium"
+  >
+    Telefon: 061 141 5035
+  </a>
+
+  <div>
+    Mladenovac, Srbija
+  </div>
+</div>
+
+    {/* 3️⃣ Copyright */}
+    <div className="text-center text-xs md:text-sm text-gray-500 pt-4 border-t border-gray-800">
+      © {new Date().getFullYear()}{" "}
+      <span className="font-semibold text-white">Media By VM</span>. Sva prava
+      zadržana.
+    </div>
+
+  </div>
+</footer>
+
+
+
     </SectionOpacity>
   );
 };
