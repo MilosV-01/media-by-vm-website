@@ -77,9 +77,39 @@ export const viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="sr">
-      <body className={montserrat.className} suppressHydrationWarning>
+      <body>
+
+        {/* Schema.org LocalBusiness */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "MarketingAgency",
+              name: "Media By VM",
+              url: "https://mediabyvm.com",
+              telephone: "+381611415035",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Mladenovac",
+                addressCountry: "RS",
+              },
+              areaServed: "Srbija",
+              sameAs: [
+                "https://www.instagram.com/mediabyvm/",
+                "https://www.tiktok.com/@mediabyvm",
+                "https://www.facebook.com/mediabyvm",
+                "https://www.linkedin.com/in/milo%C5%A1-vukmirovi%C4%87-213142251"
+              ],
+            }),
+          }}
+        />
+
         {children}
+
       </body>
     </html>
   );
 }
+
+
