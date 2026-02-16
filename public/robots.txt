@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://tvojdomen.rs
+Host: https://mediabyvm.com
 
 # Sitemaps
-Sitemap: https://tvojdomen.rs/sitemap.xml
+Sitemap: https://mediabyvm.com/sitemap.xml

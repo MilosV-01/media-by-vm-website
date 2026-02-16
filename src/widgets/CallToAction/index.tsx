@@ -31,10 +31,34 @@ const Index: FC<Props> = () => {
 
       <footer className="flex justify-between border-t border-t-gray-800 px-[5vw] py-[1.8vw] text-[1.6vw] md:text-[2vw] md:py-[2.4vw] md:px-[2vw] ">
         <div>©Media By VM 2025. <a href="https://github.com/Shatlyk1011/agency-website" target='_blank' rel="norelopener"></a></div>
-        <ul className="flex space-x-[3vw] ">
-          <li>Mladenovac, Srbija</li>
-          <li>Instagram | TikTok | YouTube | LinkedIn</li>
-        </ul>
+        <ul className="flex space-x-[2vw] text-lg md:text-2xl font-semibold">
+  <li>Mladenovac, Srbija</li>
+
+  <li>
+    <a href="https://www.instagram.com/mediabyvm/" target="_blank" rel="noopener noreferrer" className="hover:underline">
+      Instagram
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.tiktok.com/@mediabyvm" target="_blank" rel="noopener noreferrer" className="hover:underline">
+      TikTok
+    </a>
+  </li>
+
+  <li>
+    <a href="https://www.facebook.com/mediabyvm" target="_blank" rel="noopener noreferrer" className="hover:underline">
+      Facebook
+    </a>
+  </li>
+
+  <li>
+    <a href="linkedin.com/in/miloš-vukmirović-213142251" target="_blank" rel="noopener noreferrer" className="hover:underline">
+      LinkedIn
+    </a>
+  </li>
+</ul>
+
       </footer>
     </SectionOpacity>
   );

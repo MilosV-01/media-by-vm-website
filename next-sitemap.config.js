@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://tvojdomen.rs', // OBAVEZNO promeni
+  siteUrl: 'https://mediabyvm.com', // OBAVEZNO promeni
   generateRobotsTxt: true,
   changefreq: 'weekly',
   priority: 0.7,
