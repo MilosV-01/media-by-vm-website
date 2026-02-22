@@ -13,6 +13,12 @@ export const metadata: Metadata = {
     default: "Media By VM | Digitalni marketing i brendiranje",
     template: "%s | Media By VM",
   },
+  icons: {
+  icon: [
+    { url: "/favicon.ico" },
+    { url: "/favicon.png", type: "image/png" }
+  ],
+},
   description:
     "Agencija za digitalni marketing iz Mladenovca. Pomažemo biznisima da izgledaju profesionalno, povećaju vidljivost i prodaju više kroz društvene mreže, video sadržaj i web dizajn.",
   keywords: [
