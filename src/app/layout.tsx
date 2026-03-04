@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+
 import "@/shared/styles/globals.scss";
 
 const montserrat = Montserrat({
@@ -7,20 +8,20 @@ const montserrat = Montserrat({
   display: "swap",
 });
 
+const SITE_URL = "https://vukma.com";
+const BRAND = "VUKMA";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mediabyvm.com"),
+  metadataBase: new URL(SITE_URL),
+
   title: {
-    default: "Media By VM | Digitalni marketing i brendiranje",
-    template: "%s | Media By VM",
+    default: `${BRAND} | Digitalni marketing i brendiranje`,
+    template: `%s | ${BRAND}`,
   },
-  icons: {
-  icon: [
-    { url: "/favicon.ico" },
-    { url: "/favicon.png", type: "image/png" }
-  ],
-},
+
   description:
-    "Agencija za digitalni marketing iz Mladenovca. Pomažemo biznisima da izgledaju profesionalno, povećaju vidljivost i prodaju više kroz društvene mreže, video sadržaj i web dizajn.",
+    "VUKMA je digitalna marketing agencija iz Mladenovca. Pomažemo biznisima da povećaju vidljivost, izgrade brend i pretvore pratioce u kupce kroz moderan sadržaj i strategiju.",
+
   keywords: [
     "digitalni marketing",
     "brendiranje",
@@ -28,17 +29,22 @@ export const metadata: Metadata = {
     "video produkcija",
     "instagram marketing",
     "tiktok marketing",
+    "meta ads",
+    "google my business",
     "izrada sajta",
     "web dizajn",
-    "Media By VM",
+    "SEO optimizacija",
+    "AEO optimizacija",
+    "VUKMA",
     "Mladenovac",
     "Srbija",
     "Beograd",
   ],
-  authors: [{ name: "Media By VM", url: "https://mediabyvm.com" }],
-  creator: "Media By VM",
-  publisher: "Media By VM",
-  alternates: { canonical: "/" },
+
+  alternates: {
+    canonical: "/",
+  },
+
   robots: {
     index: true,
     follow: true,
@@ -50,12 +56,20 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
+
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/favicon.png", type: "image/png" }, // obriši ako nemaš
+    ],
+  },
+
   openGraph: {
-    title: "Media By VM | Marketing koji prodaje",
+    title: `${BRAND} | Marketing koji prodaje`,
     description:
-      "Dva brata, jedna misija: digitalni rast. Kreiramo sadržaj koji pretvara pratioce u kupce.",
-    url: "https://mediabyvm.com",
-    siteName: "Media By VM",
+      "Strategija, sadržaj i oglašavanje koje pretvara pratioce u kupce.",
+    url: SITE_URL,
+    siteName: BRAND,
     locale: "sr_RS",
     type: "website",
     images: [
@@ -63,59 +77,75 @@ export const metadata: Metadata = {
         url: "/images/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Media By VM",
+        alt: BRAND,
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
-    title: "Media By VM | Digitalni marketing i brendiranje",
+    title: `${BRAND} | Digitalni marketing i brendiranje`,
     description:
       "Digitalni marketing i brendiranje za biznise u Srbiji. Strategija, sadržaj i web dizajn koji donose prodaju.",
     images: ["/images/og-image.jpg"],
   },
+
+  authors: [{ name: BRAND, url: SITE_URL }],
+  creator: BRAND,
+  publisher: BRAND,
 };
 
 export const viewport = {
   themeColor: "#ff6600",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const schemaProfessionalService = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    name: BRAND,
+    url: SITE_URL,
+    telephone: "+381611415035",
+    areaServed: "Srbija",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Mladenovac",
+      addressCountry: "RS",
+    },
+    sameAs: [
+      "https://www.instagram.com/vukma.marketing/",
+      "https://www.tiktok.com/@vukma.marketing",
+      // Dodaj FB/LinkedIn kad imaš tačne linkove
+    ],
+  };
+
+  const schemaWebsite = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: BRAND,
+    url: SITE_URL,
+  };
+
   return (
     <html lang="sr">
-      <body>
-
-        {/* Schema.org LocalBusiness */}
+      <body className={montserrat.className} suppressHydrationWarning>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "ProfessionalService",
-              name: "Media By VM",
-              url: "https://mediabyvm.com",
-              telephone: "+381611415035",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Mladenovac",
-                addressCountry: "RS",
-              },
-              areaServed: "Srbija",
-              sameAs: [
-                "https://www.instagram.com/mediabyvm/",
-                "https://www.tiktok.com/@mediabyvm",
-                "https://www.facebook.com/mediabyvm",
-                "https://www.linkedin.com/in/milo%C5%A1-vukmirovi%C4%87-213142251"
-              ],
-            }),
+            __html: JSON.stringify(schemaProfessionalService),
           }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaWebsite) }}
         />
 
         {children}
-
       </body>
     </html>
   );
 }
-
-
