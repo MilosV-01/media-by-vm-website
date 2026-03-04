@@ -41,6 +41,7 @@ const Hero = () => {
         <motion.h2 ref={heading2} className="z-20 text-[1.7vw] md:text-[3vw] font-medium text-text-1/7 5" style={{ opacity }} >
           Marketing koji gradi brend, privlači klijente i donosi rezultate.
         </motion.h2>
+        
         <div
   ref={ref1}
   className="absolute inset-0 z-10 flex items-center justify-center"
