@@ -37,9 +37,9 @@ const Index: FC<Props> = () => {
     {/* 1️⃣ Socials */}
     <ul className="flex justify-center gap-5">
   {[
-    { icon: <FaInstagram />, href: "https://www.instagram.com/mediabyvm/" },
-    { icon: <FaTiktok />, href: "https://www.tiktok.com/@mediabyvm" },
-    { icon: <FaFacebookF />, href: "https://www.facebook.com/mediabyvm" },
+    { icon: <FaInstagram />, href: "https://www.instagram.com/vukma.marketing/" },
+    { icon: <FaTiktok />, href: "https://www.tiktok.com/@vukma.marketing" },
+    { icon: <FaFacebookF />, href: "https://www.facebook.com/vukma.marketing" },
     { icon: <FaLinkedinIn />, href: "https://www.linkedin.com/in/milo%C5%A1-vukmirovi%C4%87-213142251" },
   ].map((item, index) => (
     <li key={index}>
@@ -75,7 +75,7 @@ const Index: FC<Props> = () => {
     {/* 3️⃣ Copyright */}
     <div className="text-center text-xs md:text-sm text-gray-500 pt-4 border-t border-gray-800">
       © {new Date().getFullYear()}{" "}
-      <span className="font-semibold text-white">Media By VM</span>. Sva prava
+      <span className="font-semibold text-white">Vukma</span>. Sva prava
       zadržana.
     </div>
 
