@@ -13,7 +13,7 @@ const Index: FC<Props> = () => {
         <div className="relative self-start px-[6vw] md:px-[3vw] pb-[5vw] pt-[3vw]">
           <div className="flex space-x-[5vw] md:space-x-0 md:flex-col md:space-y-[3vw] md:items-center">
             <p className="flex grow-[4] basis-0 flex-wrap text-[2.3vw] md:text-[3.8vw] md:leading-[1.3] md:text-balance md:text-center">
-<b>Vukma je digitalna agencija za kreiranje kvalitetnog statičnog i dinamičkog sadržaja namenjenog brend komunikaciji i digitalnom oglašavanju.</b> Kroz strateški pristup, kreativna rešenja i pažljivo planiranu distribuciju, pomažemo brendovima da izgrade prepoznatljiv identitet i ostvare merljive rezultate u online prostoru.
+<b>VUKMA je digitalna agencija za kreiranje kvalitetnog statičnog i dinamičkog sadržaja namenjenog brend komunikaciji i digitalnom oglašavanju.</b> Kroz strateški pristup, kreativna rešenja i pažljivo planiranu distribuciju, pomažemo brendovima da izgrade prepoznatljiv identitet i ostvare merljive rezultate u online prostoru.
 </p>
 
             <div className="relative h-[20vw] w-[30vw] md:h-[40vw] md:max-w-[90%] md:text-center grow-[3] md:w-full basis-0 md:basis-[initial]  bg-bg-2">

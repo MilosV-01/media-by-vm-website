@@ -50,7 +50,7 @@ export const CARDS = [
     title: 'Web razvoj',
     description:
       'Kreiramo moderne, brze i SEO optimizovane sajtove koji rade za vas, pretvaraju posetioce u klijente i predstavljaju vaš brend u najboljem svetlu.',
-    services: [['Izrada web sajtova', 'SEO optimizacija','AEO optimizacija']],
+    services: [['Izrada web sajtova', 'SEO optimizacija']],
     number: '03.',
     classes: 'border-t border-gray-1/50',
   },
